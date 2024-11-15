@@ -1,26 +1,26 @@
-// script.js
-
 // Inicializa EmailJS con tu clave pública
 (function() {
     emailjs.init("328XiNWJvR8Of0AfS");
 })();
-//llama el formulario
+
+// Llama el formulario
 document.getElementById('Buzon').addEventListener('submit', function(event) {
     event.preventDefault();
-// se llaman las secciones del formulario
+
+    // Captura los valores del formulario
     const templateParams = {
         to_name: document.getElementById('name').value,
         suggestion: document.getElementById('Sugerencia').value,
     };
-//cuando se envia correctamente , el servicio de EMAILJS y el segundo es la plantilla de EMAILJS
-    emailjs.send('service_jhp7kcg', 'template_lmomq0h', templateParams)
-    .then(function(response) {
-        console.log('¡ÉXITO! ', response.status, response.text);
-        alert('Sugerencia enviada con éxito.');
-    })
-    .catch(function(error) {
-        console.error('Error más detallado:', error);
-        alert('Error al enviar la sugerencia.');
-    });
 
+    // Envía el correo usando EmailJS
+    emailjs.send('service_jhp7kcg', 'template_lmomq0h', templateParams)
+        .then(function(response) {
+            console.log('¡ÉXITO! ', response.status, response.text);
+            alert('Sugerencia enviada con éxito.');
+        })
+        .catch(function(error) {
+            console.error('Error al enviar la sugerencia:', error);
+            alert('Error al enviar la sugerencia. Inténtalo más tarde.');
+        });
 });
