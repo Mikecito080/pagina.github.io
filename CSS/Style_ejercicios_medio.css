@@ -114,7 +114,7 @@ body {
   }
   
   .content {
-    margin-left: 50px; /* Tamaño del sidebar colapsado */
+    margin-left: 65px; /* Tamaño del sidebar colapsado */
     padding: 20px;
     transition: margin-left 0.3s ease; 
     background-position: center;
