@@ -9,7 +9,7 @@ document.getElementById('Buzon').addEventListener('submit', function(event) {
     event.preventDefault();
 // se llaman las secciones del formulario
     const templateParams = {
-        name: document.getElementById('name').value,
+        to_name: document.getElementById('name').value,
         suggestion: document.getElementById('Sugerencia').value,
     };
 //cuando se envia correctamente , el servicio de EMAILJS y el segundo es la plantilla de EMAILJS
