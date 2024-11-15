@@ -156,3 +156,13 @@ footer {
 
   justify-content: center;
 }
+/* Responsive ajustes */
+@media (max-width: 768px) {
+  .right-sidenav {
+      width: 100px; /* Sidebar más pequeño en pantallas pequeñas */
+  }
+
+  .content {
+      margin-right: 100px;
+  }
+}
