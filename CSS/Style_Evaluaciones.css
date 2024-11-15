@@ -255,3 +255,13 @@ footer {
   width: 100%;
   height: 40PX;
 }
+/* Responsive ajustes */
+@media (max-width: 768px) {
+  .right-sidenav {
+      width: 100px; /* Sidebar más pequeño en pantallas pequeñas */
+  }
+
+  .content {
+      margin-right: 100px;
+  }
+}
