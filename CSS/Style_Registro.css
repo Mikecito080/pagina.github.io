@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box; /* Asegura que el padding y borde se incluyan dentro del ancho y alto de los elementos */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Define la fuente de todo el documento */
+    display: flex; /* Usa flexbox para centrar el contenido */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    min-height: 100vh; /* Altura mínima de la pantalla completa */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    background: linear-gradient(150deg, #7085f9, #58D68D); /* Aplica un fondo degradado */
+}
+
+.container {
+    background-color: #fff; /* Fondo blanco para el contenedor */
+    padding: 20px; /* Espacio interno de 20px alrededor del contenido */
+    border-radius: 8px; /* Bordes redondeados para el contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar un efecto de elevación */
+    width: 400px; /* Ancho fijo del contenedor */
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+h2 {
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+    color: #333; /* Color del texto en un gris oscuro */
+}
+
+label {
+    display: block; /* Hace que las etiquetas ocupen toda la línea */
+    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+    color: #555; /* Color del texto en un gris medio */
+}
+
+input {
+    width: 100%; /* Hace que el campo de entrada ocupe el 100% del ancho del contenedor */
+    padding: 8px; /* Espacio interno dentro del campo de entrada */
+    margin-bottom: 15px; /* Espacio debajo del campo de entrada */
+    border: 1px solid #ddd; /* Borde gris claro alrededor del campo */
+    border-radius: 4px; /* Bordes ligeramente redondeados para el campo de entrada */
+}
+
+button {
+    width: 100%; /* Botón ocupa todo el ancho del contenedor */
+    padding: 10px; /* Espacio interno para hacerlo más grande */
+    background-color: #7085f9; /* Color de fondo del botón */
+    color: white; /* Color del texto en blanco */
+    border: none; /* Quita el borde del botón */
+    border-radius: 25px; /* Bordes redondeados para el botón */
+    cursor: pointer; /* Cambia el cursor a pointer al pasar sobre el botón */
+}
+
+button:hover {
+    background-color: #2f4eff; /* Cambia el color de fondo del botón al pasar el ratón */
+}

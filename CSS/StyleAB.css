@@ -1,0 +1,256 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: space-between; /* Espacio entre imagen y botón */
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #7085f9, #5063c9);
+  border-color: #7085f9;
+  border-bottom: 2px solid #111;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho */
+  z-index: 999; /* Se asegura de estar por encima de todo */
+}
+
+.header-btn {
+  margin-right: 30px;
+  background-color: #007bff; /* Azul */
+  color: #111;
+  border: none;
+  font-size: 12px;
+  padding: 8px 10px;
+  white-space: nowrap;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header-img {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(135deg, #7085f9, #5063c9); /* Fondo claro para contraste */
+    padding: 1px;
+    border-radius: 50%; /* Círculo */
+}
+
+.sidenav {
+  height: 100%;
+  width: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #7085f9, #5063c9);
+  border-color: #7085f9;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  padding-top: 60px;
+}
+
+
+ .sidenav img{
+  width: 30px;
+  height: 25px;
+ }
+.sidenav:hover {
+  width: 250px; /* Expande el sidebar al pasar el mouse */
+}
+
+.sidenav a {
+  font-weight: 700px;
+  display: flex;
+  align-items: center;
+  padding: 8px 8px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000000;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  z-index: 2;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav i {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.sidenav .menu-text {
+  opacity: 0;
+  visibility: hidden;
+  white-space: nowrap;
+  margin-left: 10px;
+  transition: opacity 0.3s ease, visibility 0.3s ease, margin-left 0.3s ease;
+}
+
+.sidenav:hover .menu-text {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 10px; /* Alinea el texto con los iconos */
+}
+
+.open-area {
+  height: 100%;
+  width: 0px; /* Área para el hover */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+} 
+
+/* Estilo del contenido */
+.content {
+  margin-bottom: 50px; /* Ajusta este valor para que coincida con la altura del footer */
+  margin-left: 50px; /* Tamaño del sidebar colapsado */
+  padding: 20px;
+  transition: margin-left 0.3s ease; 
+}
+
+.sidenav:hover ~ .content {
+  margin-left: 250px; /* Cambia el margen para hacer espacio al sidebar expandido */
+}
+
+/* Estilo de las tarjetas */
+.card-container {
+    
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card-container {
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(-45deg, #017a92 0%, #00a29d 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration-color: #f1f1f1;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  background: #07182E;
+  text-decoration-color: #f1f1f1;
+  inset: 5px;
+  border-radius: 15px;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 1; /* Asegura que el ::after quede detrás del contenido */
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 180%;
+  background-image: linear-gradient(180deg, rgb(149, 206, 231), rgb(0, 1, 2));
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+  z-index: 0; /* Asegura que ::before quede aún más atrás */
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover {
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__content {
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+  z-index: 2; /* Coloca el contenido encima del ::after */
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.card:hover svg {
+  scale: 0;
+  transform: rotate(-45deg);
+}
+
+.letra {
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+}
+/*FOOTER*/
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%; /* Asegúrate de que ocupe todo el ancho */
+  color: white; /* Color del texto */
+  text-align: center; /* Alinea el texto al centro */
+  padding: 5px 0; /* Espaciado vertical */
+  z-index: 3;
+  font-size: 12px;
+  background-color: #012c3d;
+   border-top: 3px solid #5063c9; /* Color que conecta con el header */
+}
+

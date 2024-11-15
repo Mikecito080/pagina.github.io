@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/Style_Espacio.css">
+    <title> Espacio de Interacción registrado </title>
+</head>
+<body>
+    
+    <header class="header">
+        <img src="imag_menu/logoblack1.PNG" alt="Logo" class="header-img">
+        <a href="index.html">
+        <button class="header-btn"> Cerrar Sesion </button>
+      </a>
+    </header>
+    
+    <div id="sidenav" class="sidenav">
+        <a href="Descripcion_registrado.html"><img src="imag_menu/descripcion.png"><span class="menu-text">Descripción</span></a>
+        <a href="Vocabulario_registrado.html"><img src="imag_menu/Vocabulario.png"><span class="menu-text">Vocabulario</span></a>
+        <a href="Alfabeto_registrado.html"><img src="imag_menu/Alfabeto.png"><span class="menu-text">Alfabeto</span></a>
+        <a href="Espacio_registrado.html"><img src="imag_menu/Espacio.png"><span class="menu-text">Espacio de Interacción</span></a>
+        <a href="Evaluaciones.html"><img src="imag_menu/Evaluacion.png"><span class="menu-text">Evaluaciones </span></a> 
+        
+    </div>
+   
+    <div class="content">
+        
+       
+        
+    <div class="flex">
+       
+        <form class="form" id="Buzon"> 
+            <p class="title">Buzón de sugerencia </p>
+            <p class="message">Diligencie los siguientes datos por favor. </p>
+        <label for="name">Nombre:
+        <input class="input" type="text" id="name" required>
+    </label> 
+        <label for="pais">País:
+    <input class="input" type="text" id="pais" required>
+</label>
+    <label for="email">Correo Electrónico:
+    <input class="input" type="email" id="email" required>
+</label>
+    <label for="Sugerencia">Sugerencia:
+    <textarea class="input" id="Sugerencia" required></textarea>
+</label>
+    <button class="submit" type="submit">Enviar Sugerencia</button>
+    <!-- Incluye la biblioteca de EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Incluye tu archivo JavaScript externo -->
+    <script src="JS/Javabuzon.js"></script>
+    </form>
+    </div>
+</div>
+
+    </div>
+</body>
+<footer>
+    <p> Maicol Stid Lopez Garcia - Oscar Julian Villamarin - Juan David Vargas - John Anderson Yate Agredo (Creditos) <br>
+    Uniagustiniana </p>
+</footer>
+</html>

@@ -1,0 +1,143 @@
+body {
+    /* Elimina el margen y el relleno, y configura la fuente y el fondo */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(150deg, #7085f9, #58D68D);
+    height: 100vh; /* Asegura que el fondo cubra toda la altura de la ventana */
+}
+
+.formulario {
+    /* Centra el formulario en la pantalla */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Mueve el formulario para que esté exactamente al centro */
+    width: 400px;
+    background: white;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.formulario h1 {
+    /* Estilo del título del formulario */
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver; /* Línea inferior para separar el título del formulario */
+}
+
+.formulario form {
+    /* Relleno interno del formulario */
+    padding: 0 40px;
+    box-sizing: border-box; /* Incluye el relleno dentro del ancho del elemento */
+}
+
+form .username,
+form .password {
+    /* Estilo para cada campo de entrada (username y password) */
+    position: relative;
+    border-bottom: 2px solid gray; /* Línea gris en la parte inferior */
+    margin: 30px 0; /* Espaciado vertical */
+}
+
+.username input,
+.password input {
+    /* Estilo de los campos de entrada */
+    width: 100%; /* Hace que el campo ocupe todo el ancho disponible */
+    padding: 0 5px; /* Relleno a los lados */
+    height: 40px;
+    font-size: 16px;
+    border: none; /* Quita el borde predeterminado */
+    background: none; /* Elimina el fondo por defecto */
+    outline: none; /* Quita el contorno cuando el campo está en foco */
+}
+
+.username label,
+.password label {
+    /* Estilo de las etiquetas de los campos */
+    position: absolute; /* Ubica las etiquetas dentro de los campos de entrada */
+    top: 50%; /* Centra verticalmente la etiqueta */
+    left: 5px; /* Espacio desde el borde izquierdo */
+    color: gray; /* Color de texto gris */
+    transform: translateY(-50%); /* Ajusta la posición para que quede alineada verticalmente */
+    font-size: 16px;
+    pointer-events: none; /* Desactiva los eventos de clic en la etiqueta */
+    transition: 0.3s ease; /* Suaviza la transición de movimiento y color */
+}
+
+/* Mueve la etiqueta hacia arriba cuando el campo está enfocado o no está vacío */
+.username input:focus ~ label,
+.username input:not(:placeholder-shown) ~ label,
+.password input:focus ~ label,
+.password input:not(:placeholder-shown) ~ label {
+    top: -10px; /* Mueve la etiqueta hacia arriba */
+    font-size: 13px; /* Reduce el tamaño de la etiqueta */
+    color: #6C3483; /* Cambia el color al enfocarse */
+}
+
+.username span::before,
+.password span::before {
+    /* Línea animada debajo de los campos de entrada cuando están en foco */
+    content: ''; /* Genera un pseudo-elemento vacío */
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%; /* Comienza con ancho 0% */
+    height: 2px;
+    background: #6C3483; /* Color de la línea animada */
+    transition: 0.3s; /* Transición para expandirse suavemente */
+}
+
+.username input:focus ~ span::before,
+.password input:focus ~ span::before {
+    /* Expande la línea al 100% cuando el campo está enfocado */
+    width: 100%;
+}
+
+.recordar {
+    /* Estilo para el texto de "Recordarme" */
+    margin: -5px 0 20px 5px;
+    color: blue;
+    cursor: pointer;
+}
+
+.recordar:hover {
+    /* Subraya el texto al pasar el mouse */
+    text-decoration: underline;
+}
+
+input[type="submit"] {
+    /* Estilo del botón de envío */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 50px;
+    border: 1px solid;
+    background: #7085f9; /* Color de fondo */
+    border-radius: 25px; /* Bordes redondeados */
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none; /* Quita el contorno */
+}
+
+input[type="submit"]:hover {
+    /* Cambia el color de fondo al pasar el mouse */
+    background-color: #2f4eff;
+}
+
+.registrarse {
+    /* Estilo para la sección de registro */
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+}
+
+.registrarse a {
+    /* Estilo para el enlace de "Regístrate aquí" */
+    color: blue;
+    text-decoration: none;
+}
+
+.registrarse a:hover {
+    /* Subraya el enlace al pasar el mouse */
+    text-decoration: underline;
+}

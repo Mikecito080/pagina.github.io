@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Ejercicio medio </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="CSS/Style_ejercicios_medio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <script src="JS/Ejercicio_medio.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <img src="imag_menu/logoblack1.PNG" alt="Logo" class="header-img">
+        <a href="Evaluaciones.html">
+        <button class="header-btn"> Volver </button>
+        </a>
+    </header>
+
+    <div id="sidenav" class="sidenav">
+        <a href="Descripcion_registrado.html"><img src="imag_menu/descripcion.png"><span class="menu-text">Descripción</span></a>
+        <a href="Vocabulario_registrado.html"><img src="imag_menu/Vocabulario.png"><span class="menu-text">Vocabulario</span></a>
+        <a href="Alfabeto_registrado.html"><img src="imag_menu/Alfabeto.png"><span class="menu-text">Alfabeto</span></a>
+        <a href="Espacio_registrado.html"><img src="imag_menu/Espacio.png"><span class="menu-text">Espacio de Interacción</span></a>
+        <a href="Evaluaciones.html"><img src="imag_menu/Evaluacion.png"><span class="menu-text">Evaluaciones </span></a> 
+    
+    </div>
+
+    <div class="content">
+        <br><br><br>
+
+        <h2>Formulario de Preguntas nivel medio </h2>
+            <div>
+                <form id="formulario" onsubmit="return validarFormulario(event)">
+            <div>
+                <label for="pregunta1"> 1) Como saludarias a una persona en horas de la mañana? </label>
+            <br><br>
+            <input type="radio" name="pregunta1" value="Buenos dias"> <img class="imagen" src="CSS/imagenes_vocabulario/buenos-dias.gif">
+            <input type="radio" name="pregunta1" value="Buenas tardes"> <img class="imagen" src="CSS/imagenes_vocabulario/buenas-tardes.gif">
+            <input type="radio" name="pregunta1" value="Buenas noches"> <img class="imagen" src="CSS/imagenes_vocabulario/buenas-noches.gif">
+        </div>
+
+        <br>
+        
+        <div>
+            <label for="pregunta2"> 2) Como responderias a una persona despues de ayudarla? </label>
+            <br><br>
+            <input type="radio" name="pregunta2" value="Buenas noches"> <img class="imagen" src="CSS/imagenes_vocabulario/buenas-noches.gif"> 
+            <input type="radio" name="pregunta2" value="Con gusto"> <img class="imagen" src="CSS/imagenes_vocabulario/con-gusto.gif"> 
+            <input type="radio" name="pregunta2" value="Gracias"> <img class="imagen" src="CSS/imagenes_vocabulario/gracias.gif"> 
+        </div>
+
+        <br>
+
+        <div>
+            <label for="pregunta3"> 3) Como le dirias a una persona que te ayudo?</label>
+            <br><br>
+            <input type="radio" name="pregunta3" value="Buenos dias"> <img class="imagen" src="CSS/imagenes_vocabulario/buenos-dias.gif"> 
+            <input type="radio" name="pregunta3" value="Buenas noches"> <img class="imagen" src="CSS/imagenes_vocabulario/buenas-noches.gif"> 
+            <input type="radio" name="pregunta3" value="Gracias"> <img class="imagen" src="CSS/imagenes_vocabulario/gracias.gif"> 
+        </div>
+
+        <br>    
+
+        <center><button type="submit"class="btn">Enviar</button></center>
+    </form>
+
+    <div id="resultado" class="hidden">
+        <h3>Resultados de tu examen:</h3>
+        <p id="respuesta1"></p>
+        <p id="respuesta2"></p>
+        <p id="respuesta3"></p>
+    </div>
+            </div>
+</center>
+    </div>
+</body>
+<br>
+<footer>
+    
+    <p> Maicol Stid Lopez Garcia - Oscar Julian Villamarin - Juan David Vargas - John Anderson Yate Agredo (Creditos) <br>
+    Uniagustiniana </p>
+</footer>
+</html>

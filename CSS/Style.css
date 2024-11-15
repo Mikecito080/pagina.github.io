@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f1f1f1;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  body {
+    padding-bottom: 80px; /* Deja espacio para el footer */
+  }
+}
+
+p {
+  margin: 0;
+  justify-content: space-between;
+}
+
+/* Header fijo superior */
+.header {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: space-between; /* Espacio entre imagen y botón */
+  padding: 10px 20px;
+  background-color: #7085f9;
+  border-color: #7085f9;
+  border-bottom: 2px solid #111;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho */
+  z-index: 999; /* Se asegura de estar por encima de todo */
+}
+
+.header-btn {
+  margin-right: 30px;
+  background-color: #007bff; /* Azul */
+  color: #111;
+  border: none;
+  font-size: 12px;
+  padding: 8px 10px;
+  white-space: nowrap;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header-img {
+  width: 35px;
+  height: 35px;
+  background-color: #3a0a50; /* Fondo claro para contraste */
+    padding: 1px;
+    border-radius: 50%; /* Círculo */
+}
+
+/* Sidenav estilos (izquierdo) */
+.sidenav {
+  height: 100%;
+  width: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #7085f9, #5063c9);
+  border-color: #7085f9;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  padding-top: 60px;
+}
+ .sidenav img{
+  width: 30px;
+  height: 25px;
+ }
+.sidenav:hover {
+  width: 250px; /* Expande el sidebar al pasar el mouse */
+}
+
+.sidenav a {
+  font-weight: 700px;
+  display: flex;
+  align-items: center;
+  padding: 8px 8px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000000;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav i {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.sidenav .menu-text {
+  opacity: 0;
+  visibility: hidden;
+  white-space: nowrap;
+  margin-left: 10px;
+  transition: opacity 0.3s ease, visibility 0.3s ease, margin-left 0.3s ease;
+}
+
+.sidenav:hover .menu-text {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 10px; /* Alinea el texto con los iconos */
+}
+
+.open-area {
+  height: 100%;
+  width: 0px; /* Área para el hover */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+} 
+
+.sidenav:hover ~ .content {
+ margin-left: 250px; /* Cambia el margen para hacer espacio al sidebar expandido */
+}
+
+/* Content centrado con margen izquierdo */
+.content {
+  font-family: 'Barlow', sans-serif;
+  margin-top: 50px;
+  margin-left: 50px; /* Tamaño del sidebar izquierdo colapsado */
+  margin-right: 300px; /* Deja espacio para el sidenav derecho */
+  padding: 20px;
+  transition: margin-left 0.3s ease, margin-right 0.3s ease;
+  padding-bottom: 80px; /* Espacio adicional para evitar superposición con el footer */
+}
+
+.content h2{
+  font-family: 'Barlow', sans-serif;
+    font-weight: 700; /* Ejemplo para títulos en negrita */
+  text-align: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.content p{
+  font-size: medium;
+  font-family: 'Barlow', sans-serif;
+  padding: 10px;
+  
+}
+
+/* Sidenav derecho fijo */
+.right-sidenav {
+  font-family: 'Barlow', sans-serif;
+margin-top: 50px;
+  margin-bottom: 50px;
+  height: 130%;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f1f1f1;
+  padding-top: 60px;
+  color: #fff;
+  overflow-y: auto; /* Para scroll si el contenido es largo */
+ 
+}
+
+.right-sidenav h3 {
+  color: #000;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.right-sidenav p {
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* Responsive ajustes */
+@media (max-width: 768px) {
+  .right-sidenav {
+      width: 100px; /* Sidebar más pequeño en pantallas pequeñas */
+  }
+
+  .content {
+      margin-right: 100px;
+  }
+}
+/*FOOTER*/
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%; /* Asegúrate de que ocupe todo el ancho */
+  color: white; /* Color del texto */
+  text-align: center; /* Alinea el texto al centro */
+  padding: 5px 0; /* Espaciado vertical */
+  z-index: 3;
+  font-size: 12px;
+  background-color: #012c3d;
+    border-top: 3px solid #5063c9; /* Color que conecta con el header */
+}
+.imagen{
+  width: 30%;
+  height: 40%;
+  border-radius: 20px;
+}
+.tuto {
+  margin-bottom: 120px; /* Aumenta para evitar el footer */
+}
+

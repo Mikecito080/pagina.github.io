@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Descripcion </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header">
+        <img src="imag_menu/logoblack1.PNG" alt="Logo" class="header-img">
+        <a href="index.html">
+        <button class="header-btn"> Cerrar sesion</button>
+      </a>
+    </header>
+
+    <div id="sidenav" class="sidenav">
+        <a href="Descripcion_registrado.html"><img src="imag_menu/descripcion.png"><span class="menu-text">Descripción</span></a>
+        <a href="Vocabulario_registrado.html"><img src="imag_menu/Vocabulario.png"><span class="menu-text">Vocabulario</span></a>
+        <a href="Alfabeto_registrado.html"><img src="imag_menu/Alfabeto.png"><span class="menu-text">Alfabeto</span></a>
+        <a href="Espacio_registrado.html"><img src="imag_menu/Espacio.png"><span class="menu-text">Espacio de Interacción</span></a>
+        <a href="Evaluaciones.html"><img src="imag_menu/Evaluacion.png"><span class="menu-text">Evaluaciones </span></a> 
+        
+    </div>
+    
+
+    <span class="open-area" id="hoverArea"></span>
+
+    <div class="content">
+        <h2>SignHands</h2>
+        <h3>¿Qué es?</h3>
+        <p> Este es un sitio web diseñado para instruir y enseñar a cualquier persona que quiera involucrarse con el lenguaje de señas, 
+            con el propósito de dejar una breve introducción del vocabulario, saludos y actividades didácticas. <br>
+            Este sitio web es accesible para cualquier dispositivo (Computadores, tablets, smartphones) con acceso a internet, 
+            es de aclarar que se podrá visualizar desde cualquier navegador (Opera, chrome, Edge, Firefox); El sitio incluye 
+            un poco de la historia, el conocimiento se afianza y se adquiere por medio de tarjetas intuitivas que se dividirán 
+            en diferentes secciones (Alfabeto, Palabras básicas, …), este conocimiento se pondrá a prueba con una serie de ejercicios 
+            que incluirá la pagina, para mejor desarrollo y actualización de la página se incluye un formulario que abarcara las 
+            sugerencias y problemas que presente la página desde la perspectiva del usuario. <br> </p> 
+            <h3>¿Cual es su alcance?</h3> 
+         <p>   
+            Singnhands  se proyecta para las personas que requieran un bosquejo de cómo iniciar o mantener una 
+            conversación con una persona que tenga una discapacidad auditiva o trastorno del desarrollo lingüístico, 
+            esto se proyecta para romper las paredes que se tienen en ambientes de restaurantes, hoteles, atención al cliente (presencial), etc.
+        </p>         
+        <br>
+    
+    <h3>Tutorial de Uso</h3>
+    
+    <!-- Muestra el progreso del tutorial -->
+    <p id="progress">Paso <span id="currentStep">1</span> de <span id="totalSteps">4</span></p>
+    
+    <!-- Lista de pasos del tutorial -->
+    <ol id="tutorialSteps">
+    
+        <li>
+            <strong>Accede a las secciones:</strong>  <br>
+            <p> Utiliza el menú lateral deslizando el mouse para poder acceder al menu de navegacion. </p>
+            <br>
+            <img class="imagen" src="Img_tutorial/Navegacion.png" alt=""> 
+        </li>
+    
+        <li>
+            <strong>Explora el vocabulario:</strong> <br>
+            <p> Aqui podras navegar por las diferentes secciones para ampliar el vocabulario. </p>
+            <br>
+            <img class="imagen" src="Img_tutorial/Vocabulario.png" alt=""> 
+        </li>
+    
+        <li>
+            <strong>Explora el alfabeto:</strong> <br>
+            <p> Aqui podras acceder al alfabeto de todas las letras. </p>
+            <br>
+            <img class="imagen" src="Img_tutorial/Alfabeto.png" alt=""> 
+    
+        <li>
+            <strong>Envía sugerencias:</strong> <br>
+            <p> Aqui podras llenar el buzon con tus datos para poder ayudarnos a mejorar en este espacio educativo. </p>
+            <br>
+            <img class="imagen" src="Img_tutorial/Buzon.png" alt=""> 
+        </li>
+    
+        <li>
+            <strong>Registro:</strong> <br>
+            <p> Presiona el boton del login, crea tu cuenta en "registrate aqui", y podras acceder al apartado de evaluaciones 
+                para poder realizar ejercicios que ayudaran a tu progreso </p>
+            <br>
+                <img class="imagen" src="Img_tutorial/Login.png" alt=""> 
+                <img class="imagen" src="Img_tutorial/Evaluaciones.png" alt="">
+        </li>
+        
+    </ol>
+    
+    <br><br>
+    
+    <!-- Botones para navegar entre los pasos -->
+    <button id="prevStep" disabled>Anterior</button> <!-- Deshabilitado inicialmente -->
+    <button id="nextStep">Siguiente</button>
+    
+    <script>
+        // Seleccionamos los elementos importantes del DOM
+        const steps = document.querySelectorAll('#tutorialSteps li'); // Todos los pasos del tutorial
+        const currentStep = document.getElementById('currentStep');   // Elemento que muestra el paso actual
+        const totalSteps = document.getElementById('totalSteps');     // Elemento que muestra el total de pasos
+        const prevBtn = document.getElementById('prevStep');          // Botón para ir al paso anterior
+        const nextBtn = document.getElementById('nextStep');          // Botón para ir al siguiente paso
+    
+        // Índice actual del paso, comienza en 0 (primer paso)
+        let stepIndex = 0;
+    
+        // Mostramos el total de pasos en el tutorial
+        totalSteps.textContent = steps.length;
+    
+        // Función que actualiza la visualización de los pasos
+        function updateSteps() {
+            // Recorremos todos los pasos para mostrar solo el actual
+            steps.forEach((step, index) => {
+                if (index === stepIndex) {
+                    step.style.display = 'block'; // Mostrar paso actual
+                } else {
+                    step.style.display = 'none';  // Ocultar otros pasos
+                }
+            });
+    
+            // Actualizamos el texto que muestra el número del paso actual
+            currentStep.textContent = stepIndex + 1;
+    
+            // Habilitamos o deshabilitamos los botones según el paso actual
+            prevBtn.disabled = stepIndex === 0;                 // Deshabilitar "Anterior" en el primer paso
+            nextBtn.disabled = stepIndex === steps.length - 1;  // Deshabilitar "Siguiente" en el último paso
+        }
+    
+        // Evento para retroceder al paso anterior
+        prevBtn.addEventListener('click', () => {
+            if (stepIndex > 0) { // Verifica que no estemos en el primer paso
+                stepIndex--;     // Retrocede un paso
+                updateSteps();   // Actualiza la visualización
+            }
+        });
+    
+        // Evento para avanzar al siguiente paso
+        nextBtn.addEventListener('click', () => {
+            if (stepIndex < steps.length - 1) { // Verifica que no estemos en el último paso
+                stepIndex++;     // Avanza un paso
+                updateSteps();   // Actualiza la visualización
+            }
+        });
+    
+        // Llamamos a esta función al inicio para mostrar el primer paso correctamente
+        updateSteps();
+    </script>
+    
+        </div>
+    
+        <div class="right-sidenav">
+            <h3>Un poco de historia</h3>
+            <p>La historia de la lengua de señas comenzó en Europa en el siglo XVI, cuando personas como Pedro Ponce de León y 
+                Charles-Michel de l'Épée desarrollaron métodos para enseñar a personas sordas. En Estados Unidos, el ASL 
+                (lengua de señas americana) se formó en el siglo XIX gracias a Laurent Clerc y Thomas Hopkins Gallaudet. Durante mucho 
+                tiempo, las lenguas de señas fueron marginadas y se prefirió la enseñanza oral, hasta que en los años 60 el lingüista 
+                William Stokoe demostró que eran idiomas completos. Hoy existen muchas lenguas de señas alrededor del mundo, siendo 
+                esenciales para la identidad y cultura de las comunidades sordas.. 
+            <img src="IMAGENES/Autor.jfif" alt=""></p>
+        </div>
+    </div>
+    
+    </body>
+    
+    <footer>
+        <p> Maicol Stid Lopez Garcia - Oscar Julian Villamarin - Juan David Vargas - John Anderson Yate Agredo (Creditos) <br>
+        Uniagustiniana </p>
+    </footer>
+    </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Ejercicio basico </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="CSS/Style_ejercicios_medio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <script src="JS/Ejercicio_basico.js"></script>
+
+    <style>
+        .hidden {
+            display: none;
+        } /* Aplicacion de color al texto de las respuestas */
+        .correcta { 
+            color: green;
+            font-weight: bold;
+        } /* Aplicacion de color al texto de las respuestas */
+        .incorrecta {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="header">
+        <img src="imag_menu/logoblack1.PNG" alt="Logo" class="header-img">
+        <a href="Evaluaciones.html">
+        <button class="header-btn"> Volver </button>
+        </a>
+    </header>
+
+    <div id="sidenav" class="sidenav">
+        <a href="Descripcion_registrado.html"><img src="imag_menu/descripcion.png"><span class="menu-text">Descripción</span></a>
+        <a href="Vocabulario_registrado.html"><img src="imag_menu/Vocabulario.png"><span class="menu-text">Vocabulario</span></a>
+        <a href="Alfabeto_registrado.html"><img src="imag_menu/Alfabeto.png"><span class="menu-text">Alfabeto</span></a>
+        <a href="Espacio_registrado.html"><img src="imag_menu/Espacio.png"><span class="menu-text">Espacio de Interacción</span></a>
+        <a href="Evaluaciones.html"><img src="imag_menu/Evaluacion.png"><span class="menu-text">Evaluaciones </span></a> 
+  
+    </div>
+
+    <center>
+<br><br><br>
+
+    <h2>Formulario de Preguntas nivel basico </h2>
+        <div>
+    <form id="formulario" onsubmit="return validarFormulario(event)">
+        <div>
+            <label for="pregunta1"> 1) Cual de las siguientes imagenes corresponde a la letra A ? </label>
+            <br>
+            <input type="radio" name="pregunta1" value="opcion a"> <img src="IMAGENES/a.jpg"> 
+            <input type="radio" name="pregunta1" value="opcion e"> <img src="IMAGENES/E.png"> 
+            <input type="radio" name="pregunta1" value="opcion j"> <img src="IMAGENES/J.png">
+        </div>
+
+        <br><br>
+        
+        <div>
+            <label for="pregunta2"> 2) Cual de las siguientes imagenes corresponde a la letra E ? </label>
+            <br>
+            <input type="radio" name="pregunta2" value="opcion a"> <img src="IMAGENES/a.jpg"> 
+            <input type="radio" name="pregunta2" value="opcion e"> <img src="IMAGENES/E.png"> 
+            <input type="radio" name="pregunta2" value="opcion j"> <img src="IMAGENES/J.png"> 
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="pregunta3"> 3) Cual de las siguientes imagenes corresponde a la letra J ?</label>
+            <br>
+            <input type="radio" name="pregunta3" value="opcion a"> <img src="IMAGENES/a.jpg"> 
+            <input type="radio" name="pregunta3" value="opcion e"> <img src="IMAGENES/E.png"> 
+            <input type="radio" name="pregunta3" value="opcion j"> <img src="IMAGENES/J.png"> 
+        </div>
+
+        <br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="resultado" class="hidden">
+        <h3>Resultados de tu examen:</h3>
+        <p id="respuesta1"></p>
+        <p id="respuesta2"></p>
+        <p id="respuesta3"></p>
+    </div>
+
+</center>
+
+</body>
+<br>
+<footer>
+    
+    <p> Maicol Stid Lopez Garcia - Oscar Julian Villamarin - Juan David Vargas - John Anderson Yate Agredo (Creditos) <br>
+    Uniagustiniana </p>
+</footer>
+</html>

@@ -1,0 +1,257 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+p{
+  top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+display: flex;
+align-items: center; /* Centra verticalmente */
+justify-content: space-between; /* Espacio entre imagen y botón */
+padding: 10px 20px;
+background-color: #7085f9;
+border-color: #7085f9;
+border-bottom: 2px solid #111;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%; /* Ocupa todo el ancho */
+z-index: 999; /* Se asegura de estar por encima de todo */
+}
+
+.header-btn {
+margin-right: 30px;
+background-color: #007bff; /* Azul */
+color: #111;
+border: none;
+font-size: 12px;
+padding: 8px 10px;
+white-space: nowrap;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.header-img {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(135deg, #7085f9, #5063c9); /* Fondo claro para contraste */
+  padding: 1px;
+  border-radius: 50%; /* Círculo */
+}
+/*logo de menu*/
+.footer-menu {
+  margin-top: 450px;
+  margin-bottom: 5  0px; /* Espacio inferior opcional */
+  display: flex;
+  margin-left: 10PX;
+
+}
+.footer-menu img{
+  width: 30px;
+  height: 25px;
+}
+.menu-footer {
+  margin-top: 3px;
+  font-weight:bold;
+  white-space: nowrap;
+  margin-left: 10px;
+  transition: opacity 0.3s ease, visibility 0.3s ease, margin-left 0.3s ease;
+}
+.sidenav {
+height: 100%;
+width: 50px;
+position: fixed;
+top: 0;
+left: 0;
+background-color: #7085f9;
+border-color: #7085f9;
+overflow-x: hidden;
+transition: width 0.3s ease;
+padding-top: 60px;
+}
+.sidenav img{
+width: 30px;
+height: 25px;
+}
+.sidenav:hover {
+width: 250px; /* Expande el sidebar al pasar el mouse */
+}
+
+.sidenav a {
+font-weight: 700px;
+display: flex;
+align-items: center;
+padding: 8px 8px;
+text-decoration: none;
+font-size: 18px;
+color: #000000;
+transition: color 0.3s ease, padding-left 0.3s ease;
+
+}
+
+.sidenav a:hover {
+color: #f1f1f1;
+}
+
+.sidenav i {
+margin-right: 10px;
+font-size: 24px;
+}
+
+.sidenav .menu-text {
+opacity: 0;
+visibility: hidden;
+white-space: nowrap;
+margin-left: 10px;
+transition: opacity 0.3s ease, visibility 0.3s ease, margin-left 0.3s ease;
+}
+
+.sidenav:hover .menu-text {
+opacity: 1;
+visibility: visible;
+margin-left: 10px; /* Alinea el texto con los iconos */
+}
+
+.open-area {
+height: 100%;
+width: 0px; /* Área para el hover */
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1;
+cursor: pointer;
+background-color: rgba(0, 0, 0, 0.5);
+transition: background-color 0.3s ease;
+} 
+
+/* Estilo del contenido */
+.content {
+  margin-bottom: 50px; /* Ajusta este valor para que coincida con la altura del footer */
+  margin-top: 50px; /* Ajusta el valor para mayor o menor espacio */
+  flex-direction: row;/*nuevo*/
+  margin-left: 50px; /* Tamaño del sidebar colapsado */
+  padding: 20px;
+  transition: margin-left 0.3s ease; 
+  display: flex; /* Habilita Flexbox */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples filas */
+  justify-content: flex-start; /* Alinea los elementos al inicio */
+}
+
+.sidenav:hover ~ .content {
+margin-left: 250px; /* Cambia el margen para hacer espacio al sidebar expandido */
+}
+/* Estilo de las tarjetas */
+.card-container {
+    
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 800px;
+    height: 254px;
+    background: #07182E;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .card h3 {
+    z-index: 1;
+    color: white;
+    font-size: 2em;
+  }
+
+  .card::before { /* Cambiar el ancho del cargue de la barra para el div del ejercicio */
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(149, 206, 231), rgb(0, 0, 0));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+  }
+  
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(350deg);
+    }
+  }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    background: #07182E;
+    ;
+    inset: 5px;
+    border-radius: 15px;
+  }    
+
+/* Estilo del modal */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 60px;
+}
+
+.image-modal:target {
+    display: block;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.cierre {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.descripcion {
+    color: white;
+    text-align: center;
+}
+/*FOOTER*/
+footer {
+  position:fixed;
+  bottom: 0;
+  background-color: #012c3d;
+  color: white;
+  text-align: center;
+  padding: 1px 0;
+  z-index: 3;
+  font-size: 12px;
+ 
+  width: 100%;
+  height: 40PX;
+}

@@ -1,0 +1,666 @@
+CSS
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: space-between; /* Espacio entre imagen y botón */
+  padding: 10px 20px;
+  background-color: #7085f9;
+  border-color: #7085f9;
+  border-bottom: 2px solid #111;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho */
+  z-index: 999; /* Se asegura de estar por encima de todo */
+}
+
+.header-btn {
+  margin-right: 30px;
+  background-color: #007bff; /* Azul */
+  color: #111;
+  border: none;
+  font-size: 12px;
+  padding: 8px 10px;
+  white-space: nowrap;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.header-img {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(135deg, #7085f9, #5063c9); /* Fondo claro para contraste */
+  padding: 1px;
+  border-radius: 50%; /* Círculo */
+}
+
+.sidenav {
+  height: 100%;
+  width: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #7085f9, #5063c9);
+  border-color: #7085f9;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  padding-top: 60px;
+  margin-bottom: 50px; /* Ajusta este valor para que coincida con la altura del footer */
+  z-index: 2;
+  
+}
+.sidenav #logoblack1 {
+  position: relative;
+  top: -10px; /* Mueve el logo hacia arriba */
+  width: 30px;
+  height: 25px;
+}
+
+ .sidenav img{
+  width: 30px;
+  height: 25px;
+ }
+ .menu_img {
+  width: 40px; /* Ajusta el tamaño del logo */
+  height: auto;
+ padding-bottom: 20px;
+
+}
+.sidenav:hover {
+  width: 250px; /* Expande el sidebar al pasar el mouse */
+}
+
+.sidenav a {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding: 8px 8px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000000;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  justify-content: flex-start; /* Asegura que el contenido no se apile */
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav i {
+  margin-right: 10px;
+  font-size: 24px;
+}
+.menu-text {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 10px; /* Mantiene un pequeño espacio entre la imagen y el texto */
+  transition: opacity 0.3s ease, visibility 0.3s ease, margin-left 0.3s ease;
+}
+
+
+.sidenav .menu-text {
+  opacity: 0;
+  visibility: hidden;
+  white-space: nowrap;
+  margin-left: 10px;
+  transition: opacity 0.3s ease, visibility 0.3s ease, margin-left 0.3s ease;
+}
+
+/* Al pasar el mouse, no cambia la visibilidad, solo ajusta el margen y el color */
+.sidenav:hover .menu-text {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 10px;
+}
+
+.open-area {
+  height: 100%;
+  width: 0px; /* Área para el hover */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+} 
+
+/* Estilo del contenido */
+.content {
+  margin-bottom: 50px; /* Ajusta este valor para que coincida con la altura del footer */
+  margin-top: 50px; /* Ajusta el valor para mayor o menor espacio */
+  flex-direction: row;/*nuevo*/
+  margin-left: 50px; /* Tamaño del sidebar colapsado */
+  padding: 20px;
+  transition: margin-left 0.3s ease; 
+  display: flex; /* Habilita Flexbox */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples filas */
+  justify-content: flex-start; /* Alinea los elementos al inicio */
+}
+table {
+  flex: 1;
+}
+
+th {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 25px;
+  padding: 15px; /* Espacio dentro de cada th */
+}
+
+.gratitude-section,
+.emotions-section, .saludos-section {
+  margin-left: auto; /* Empuja ambas secciones a la derecha */
+  display: flex;
+  flex-direction: column; /* Opcional, para organizar las tarjetas en columna */
+}
+.sidenav:hover ~ .content {
+  margin-left: 250px; /* Cambia el margen para hacer espacio al sidebar expandido */
+}
+.modal-content {
+  display: block;
+  margin: auto;
+  width: 80%;
+  max-width: 700px;
+  
+}
+
+table {
+  flex: 1;
+  border-collapse: collapse; /* Para un diseño de tabla más limpio */
+}
+
+.card {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  
+  margin-left: 10px;
+  margin-right: 10px;
+  flex: 1 0 190px; /* Crece y se encoge, con un ancho base de 190px */
+  max-width: 190px; /* Ancho máximo de cada tarjeta */
+  width: 190px;
+  height: 230px;
+  padding: .8em;
+  background: #f5f5f5;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ }
+
+
+/*AQUI SE TERMINA DE LLAMAR LA IMAGEN*/
+ .card-imgBD {
+
+  background-image: url("imagenes_vocabulario/buenos-dias.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+ 
+ .card-imgBD:hover {
+  transform: translateY(-20%);
+ }
+ /*AQUI SE TERMINA DE LLAMAR LA IMAGEN*/
+
+ .card-imgBT {
+
+  background-image: url("imagenes_vocabulario/buenas-tardes.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+ 
+ .card-imgBT:hover {
+  transform: translateY(-20%);
+ }
+
+
+ .card-imgBN {
+
+  background-image: url("imagenes_vocabulario/buenas-noches.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-imgBN:hover {
+  transform: translateY(-20%);
+ }
+
+ .card-imgGC {
+
+  background-image: url("imagenes_vocabulario/gracias.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-imgGC:hover {
+  transform: translateY(-20%);
+ }
+ .card-imgCG {
+
+  background-image: url("imagenes_vocabulario/con-gusto.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-imgCG:hover {
+  transform: translateY(-20%);
+ }
+
+ .card-imgASB {
+  background-image: url("imagenes_vocabulario/asombro.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-imgASB:hover {
+  transform: translateY(-20%);
+ }
+
+ .card-imgAMOR {
+  background-image: url("imagenes_vocabulario/amor.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-imgAMOR:hover {
+  transform: translateY(-20%);
+ }
+
+ .card-imgAlegria {
+  background-image: url("imagenes_vocabulario/alegria.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-imgAlegria:hover {
+  transform: translateY(-20%);
+ }
+/*aqui colocar las imagenes*/
+.card-img-gratitud {
+  background-image: url("imagenes_vocabulario/gratitud.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-gratitud:hover {
+  transform: translateY(-20%);
+ }
+
+ .card-img-interes {
+  background-image: url("imagenes_vocabulario/intereses.gif ");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-interes:hover {
+  transform: translateY(-20%);
+ }
+
+ /*colocar las imagenes de deportes*/
+/*1*/
+ .card-img-atletismo {
+  background-image: url("imagenes_vocabulario/Atletismo.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-atletismo:hover {
+  transform: translateY(-20%);
+ }
+/*2*/
+ .card-img-voleiboll {
+  background-image: url("imagenes_vocabulario/voleibol.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-voleiboll:hover {
+  transform: translateY(-20%);
+ }
+/*3*/
+
+.card-img-futbol {
+  background-image: url("imagenes_vocabulario/Futbol.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-futbol:hover {
+  transform: translateY(-20%);
+ }
+/*4*/
+.card-img-natacion {
+  background-image: url("imagenes_vocabulario/Natacion.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-natacion:hover {
+  transform: translateY(-20%);
+ }
+/*5*/
+.card-img-patinaje {
+  background-image: url("imagenes_vocabulario/Patinaje.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-patinaje:hover {
+  transform: translateY(-20%);
+ }
+/*colocar las imagenes de profesiones*/
+/*1*/
+.card-img-psicologo {
+  background-image: url("imagenes_vocabulario/Psicologo.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-psicologo:hover {
+  transform: translateY(-20%);
+ }
+ /*2*/
+ .card-img-abogado {
+  background-image: url("imagenes_vocabulario/Abogado.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-abogado:hover {
+  transform: translateY(-20%);
+ }
+ /*3*/
+ .card-img-enfermero {
+  background-image: url("imagenes_vocabulario/enfermero.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+ .card-img-enfermero:hover {
+  transform: translateY(-20%);
+ }
+/*4*/
+ .card-img-ingeniero {
+  background-image: url("imagenes_vocabulario/ingeniero.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-ingeniero:hover {
+  transform: translateY(-20%);
+ }
+/*5*/
+ .card-img-profesor {
+  background-image: url("imagenes_vocabulario/Profesor.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-profesor:hover {
+  transform: translateY(-20%);
+ }
+/*colocar las imagenes de los colores*/
+/*1*/
+.card-img-amarillo {
+  background-image: url("imagenes_vocabulario/Amarillo.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-amarillo:hover {
+  transform: translateY(-20%);
+ }
+ /*2*/
+ .card-img-azul {
+  background-image: url("imagenes_vocabulario/Azul.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-azul:hover {
+  transform: translateY(-20%);
+ }
+ /*3*/
+ .card-img-rojo {
+  background-image: url("imagenes_vocabulario/Rojo.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+ .card-img-rojo:hover {
+  transform: translateY(-20%);
+ }
+/*4*/
+ .card-img-verde {
+  background-image: url("imagenes_vocabulario/Verde.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-verde:hover {
+  transform: translateY(-20%);
+ }
+/*5*/
+ .card-img-naranja {
+  background-image: url("imagenes_vocabulario/Naranja.gif");
+  background-size: cover; /* Cubre todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 75%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-img-naranja:hover {
+  transform: translateY(-20%);
+ }
+
+ .card-info {
+  padding-top: 10%;
+ }
+ 
+ svg {
+  width: 20px;
+  height: 20px;
+ }
+ 
+ .card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+ }
+ 
+ /*Text*/
+ .text-title {
+  font-weight: 900;
+  font-size: 1.2em;
+  line-height: 0.1;
+ }
+ 
+ .text-body {
+  font-size: .9em;
+  padding-bottom: 10px;
+ }
+ 
+ /*Button*/
+ .card-button {
+  border: 1px solid #252525;
+  display: flex;
+  padding: .3em;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: .3s ease-in-out;
+ }
+
+ 
+ .imagen_vo
+ {
+  height: 80px;
+  width: 60px;
+ }
+
+
+ .acciones{
+  margin-left: 50px; /* Tamaño del sidebar colapsado */
+  padding: 20px;
+  transition: margin-left 0.3s ease; 
+  display: flex; /* Habilita Flexbox */
+  flex-direction: column; 
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples filas */
+  justify-content: flex-start; /* Alinea los elementos al inicio */
+}
+.saludos{
+  margin-left: 50px; /* Tamaño del sidebar colapsado */
+  padding: 20px;
+  transition: margin-left 0.3s ease; 
+  display: flex; /* Habilita Flexbox */
+  flex-direction: column; 
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples filas */
+  justify-content: flex-start; /* Alinea los elementos al inicio */
+}
+/*FOOTER*/
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%; /* Asegúrate de que ocupe todo el ancho */
+  color: white; /* Color del texto */
+  text-align: center; /* Alinea el texto al centro */
+  padding: 5px 0; /* Espaciado vertical */
+  z-index: 3;
+  font-size: 12px;
+  background-color: #012c3d;
+    border-top: 3px solid #5063c9; /* Color que conecta con el header */
+}
+
