@@ -157,22 +157,24 @@ margin-left: 250px; /* Cambia el margen para hacer espacio al sidebar expandido 
 }
 
 .card {
-    width: 800px;
-    height: 254px;
-    background: #07182E;
-    position: relative;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 20px;
-  }
+  width: 100%; /* Ajusta el ancho para que ocupe todo el espacio disponible */
+  max-width: 350px; /* Limita el ancho máximo en pantallas grandes */
+  height: 254px;
+  background: #07182E;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 10px; /* Margen para evitar que se toquen */
+}
 
-  .card h3 {
-    z-index: 1;
-    color: white;
-    font-size: 2em;
-  }
+.card h3 {
+  z-index: 1;
+  color: white;
+  font-size: 1.5em; /* Ajusta el tamaño para que sea más legible en pantallas pequeñas */
+}
 
   .card::before { /* Cambiar el ancho del cargue de la barra para el div del ejercicio */
     content: '';
@@ -257,11 +259,17 @@ footer {
 }
 /* Responsive ajustes */
 @media (max-width: 768px) {
-  .right-sidenav {
-      width: 100px; /* Sidebar más pequeño en pantallas pequeñas */
+  .card {
+      width: 100%; /* Ocupa todo el ancho del contenedor */
+      max-width: none; /* Sin límite de ancho */
   }
 
-  .content {
-      margin-right: 100px;
+  .card-container {
+      flex-direction: column; /* Apila las tarjetas en columnas */
+      gap: 10px;
+  }
+
+  .card h3 {
+      font-size: 1.2em; /* Ajusta el texto para pantallas pequeñas */
   }
 }
