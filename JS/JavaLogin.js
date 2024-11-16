@@ -12,7 +12,7 @@ function validarCredenciales(event) {
     // Verificar si las credenciales coinciden
     if (username === usuarioCorrecto && password === contrasenaCorrecta) {
         // Redirigir a otra página si las credenciales son correctas
-        window.location.href = "Evaluaciones.html"; // Cambia "Inicio.html" por la página de destino deseada
+        window.location.href = "Evaluaciones.html"; 
     } else {
         // Mostrar un mensaje de error si las credenciales son incorrectas
         alert("Nombre de usuario o contraseña incorrectos");
