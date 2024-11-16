@@ -156,13 +156,51 @@ footer {
 
   justify-content: center;
 }
-/* Responsive ajustes */
+/* Mantén los estilos actuales aquí, luego agrega o ajusta los siguientes media queries */
+
+/* Ajustes generales para dispositivos móviles */
 @media (max-width: 768px) {
-  .right-sidenav {
-      width: 100px; /* Sidebar más pequeño en pantallas pequeñas */
+  .sidenav {
+    width: 50px; /* Sidebar permanece pequeño */
+  }
+
+  .sidenav:hover {
+    width: 100px; /* Sidebar ligeramente más grande al hacer hover */
+  }
+
+  .menu-text {
+    font-size: 12px; /* Reduce el tamaño del texto para dispositivos pequeños */
   }
 
   .content {
-      margin-right: 100px;
+    margin-left: 65px; /* Ajusta el espacio cuando el sidebar está colapsado */
+  }
+
+  .sidenav:hover ~ .content {
+    margin-left: 100px; /* Ajusta el margen cuando el sidebar se expande en dispositivos pequeños */
+  }
+}
+
+/* Ajustes más específicos para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+  .sidenav {
+    width: 40px; /* Sidebar más pequeño para pantallas estrechas */
+  }
+
+  .sidenav:hover {
+    width: 80px; /* Menor expansión en pantallas muy pequeñas */
+  }
+
+  .sidenav a {
+    font-size: 12px; /* Texto más pequeño dentro del sidebar */
+  }
+
+  .content {
+    margin-left: 50px; /* Menor margen para ajustar */
+    padding: 10px; /* Reduce el padding para contenido más ajustado */
+  }
+
+  footer {
+    font-size: 9px; /* Reduce tamaño del texto en el footer */
   }
 }
