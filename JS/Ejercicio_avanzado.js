@@ -1,8 +1,8 @@
 // Respuestas correctas
 const respuestasCorrectas = {
-    pregunta1: 'opcion a',       // Correcto: "opcion 1" 
-    pregunta2: 'opcion e', // Correcto: "opcion 2"
-    pregunta3: 'opcion j'     // Correcto: "opcion 3"
+    pregunta1: 'Alegria',       // Correcto: "opcion 1" 
+    pregunta2: 'Amor', // Correcto: "opcion 2"
+    pregunta3: 'Asombro'     // Correcto: "opcion 3"
 };
 
 function validarFormulario(event) {

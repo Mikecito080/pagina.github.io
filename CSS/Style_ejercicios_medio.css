@@ -271,4 +271,16 @@ footer {
   .content {
       margin-right: 100px;
   }
+
+  .hidden {
+    display: none;
+} /* Aplicacion de color al texto de las respuestas */
+.correcta { 
+    color: green;
+    font-weight: bold;
+} /* Aplicacion de color al texto de las respuestas */
+.incorrecta {
+    color: red;
+    font-weight: bold;
+}
 }
