@@ -157,7 +157,7 @@ margin-left: 250px; /* Cambia el margen para hacer espacio al sidebar expandido 
 }
 
 .card {
-  width: 100%; /* Ajusta el ancho para que ocupe todo el espacio disponible */
+  width: 700px; /* Ajusta el ancho para que ocupe todo el espacio disponible */
   max-width: 350px; /* Limita el ancho máximo en pantallas grandes */
   height: 254px;
   background: #07182E;

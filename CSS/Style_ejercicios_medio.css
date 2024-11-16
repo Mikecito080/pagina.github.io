@@ -144,6 +144,13 @@ transition: background-color 0.3s ease;
   justify-content: flex-start; /* Alinea los elementos al inicio */
 }
 
+/* Ajuste de imagen en la celda de la tabla */
+.imagen {
+  width: 350px;
+  height: 200px;
+  border-radius: 20px; 
+}
+
 .sidenav:hover ~ .content {
 margin-left: 250px; /* Cambia el margen para hacer espacio al sidebar expandido */
 }
